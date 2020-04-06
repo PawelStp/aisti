@@ -1,0 +1,34 @@
+procedure Uno {
+	dos = 2;
+	tres = dos + 1;
+	dieciseis = 2 * (tres + tres + dos);
+	abogado = dieciseis - tres * dos;
+	call Dos;
+	call Cuatro; }
+
+procedure Dos {
+	catorce = dieciseis - dos;
+	while abogado {
+		abogado = dieciseis - dos * tres + catorce;
+		cartero = abogado - 10;
+		if dos then {
+			cartero = cartero + dos; }
+		else {
+			cartero = cartero - tres; }
+		call Tres; }
+	limpiadora = abogado + cartero; }
+
+procedure Tres {
+	dos = 0;
+	cinco = dos + tres;
+	if cartero then {
+		abogado = 17; }
+	else {
+		while tres {
+			cocinera = dos + tres - dieciseis * catorce - cero * abogado; }
+			tres = cinco - dos;
+		}
+	ochenta = cinco * dieciseis; }
+
+procedure Cuatro {
+	abogado = (cartero - cocinera) * limpiadora; }

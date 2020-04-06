@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2AC388F1-84B6-48BB-AC8A-ACAE2A3CCCCB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPA.QueryProcessor</RootNamespace>
+    <AssemblyName>SPA.QueryProcessor</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuxiliaryGrammar\AbstractAuxiliaryGrammar.cs" />
+    <Compile Include="AuxiliaryGrammar\AttrName.cs" />
+    <Compile Include="AuxiliaryGrammar\GrammarExceptions.cs" />
+    <Compile Include="AuxiliaryGrammar\LineRef.cs" />
+    <Compile Include="AuxiliaryGrammar\ProcRef.cs" />
+    <Compile Include="AuxiliaryGrammar\ProglineSynonym.cs" />
+    <Compile Include="AuxiliaryGrammar\RefType.cs" />
+    <Compile Include="AuxiliaryGrammar\StmtRef.cs" />
+    <Compile Include="AuxiliaryGrammar\SuchThat.cs" />
+    <Compile Include="AuxiliaryGrammar\SuchThatValidator.cs" />
+    <Compile Include="AuxiliaryGrammar\Synonym.cs" />
+    <Compile Include="AuxiliaryGrammar\VarRef.cs" />
+    <Compile Include="DesignEntity\AbstractDesignEntity.cs" />
+    <Compile Include="DesignEntity\Assign.cs" />
+    <Compile Include="DesignEntity\Call.cs" />
+    <Compile Include="DesignEntity\Constant.cs" />
+    <Compile Include="DesignEntity\If.cs" />
+    <Compile Include="DesignEntity\Procedure.cs" />
+    <Compile Include="DesignEntity\ProgramLine.cs" />
+    <Compile Include="DesignEntity\Statement.cs" />
+    <Compile Include="DesignEntity\StatementList.cs" />
+    <Compile Include="DesignEntity\Variable.cs" />
+    <Compile Include="DesignEntity\While.cs" />
+    <Compile Include="GrammarRules\AttrCompare.cs" />
+    <Compile Include="GrammarRules\AttrRef.cs" />
+    <Compile Include="GrammarRules\Ref.cs" />
+    <Compile Include="GrammarRules\With.cs" />
+    <Compile Include="LexicalRules\BracesIdent.cs" />
+    <Compile Include="LexicalRules\Ident.cs" />
+    <Compile Include="LexicalRules\ILexicalRules.cs" />
+    <Compile Include="LexicalRules\IntegerRule.cs" />
+    <Compile Include="LexicalRules\Placeholder.cs" />
+    <Compile Include="Preprocessor\DeclarationsArray.cs" />
+    <Compile Include="Preprocessor\DeclarationValidator.cs" />
+    <Compile Include="Preprocessor\DictionaryNode.cs" />
+    <Compile Include="Preprocessor\InvalidQueryException.cs" />
+    <Compile Include="Preprocessor\MergedResultTableRelations.cs" />
+    <Compile Include="Preprocessor\MethodResultList.cs" />
+    <Compile Include="Preprocessor\QueryTree.cs" />
+    <Compile Include="Preprocessor\QueryValidator.cs" />
+    <Compile Include="Preprocessor\ResultTableRelations.cs" />
+    <Compile Include="Preprocessor\SelectOutput.cs" />
+    <Compile Include="Preprocessor\SelectValidator.cs" />
+    <Compile Include="Preprocessor\SelectWithValidator.cs" />
+    <Compile Include="QueryParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPA.Models\SPA.Models.csproj">
+      <Project>{cc9bc00e-8543-423b-94b0-0795469ca19b}</Project>
+      <Name>SPA.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SPA.PKB\SPA.Pkb.csproj">
+      <Project>{e8fee4bd-8388-4001-8cc1-8674eff7643f}</Project>
+      <Name>SPA.Pkb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

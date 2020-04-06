@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SPA.QueryProcessor;
+
+namespace SPA.Main
+{
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+<<<<<<< HEAD
+            const string fileName = "text";
+            using (var file = new StreamReader(fileName + ".txt"))
+            {
+                string ln;
+
+                while ((ln = file.ReadLine()) != null)
+                {
+                    Console.WriteLine(ln);
+                    
+                }
+                file.Close();
+            }
+
+=======
+            Console.Write(QueryParser.ValidateQuery("procedure p;"));
+            Console.ReadKey();
+>>>>>>> 01db9b97e12ffd7aab2c3e95825c6b46f2a4a17c
+
+        }
+    }
+}

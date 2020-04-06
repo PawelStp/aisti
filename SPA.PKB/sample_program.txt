@@ -1,0 +1,20 @@
+﻿procedure First {
+ x = ( x * y + 2 ) * ( 1 + 2 + 3);
+ z = 3;
+ call Second; }
+procedure Second {
+ x = 0;
+ while i {
+ x = x + y + z; 
+ call Third;
+ i = i - 1; 
+ if x then {
+ x = x + 1; }
+ else {
+ z = 1; } }
+ z = z + x + i;
+ y = z + 2;
+ x = x * y + z; }
+procedure Third {
+ z = 5;
+ v = z; }
